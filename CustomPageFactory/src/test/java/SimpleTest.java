@@ -23,7 +23,11 @@ public class SimpleTest {
     @BeforeMethod
     public void openPage() {
         System.setProperty("webdriver.chrome.driver", "C://Chrome//chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("no-sandbox");
+        capability = DesiredCapabilities.Chrome();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        driver = new RemoteWebDriver(seleniumServer, capability)
         driver.get("https://www.google.com.ua");
     }
 
