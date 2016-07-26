@@ -3,6 +3,8 @@ import framework.CustomFieldDecorator;
 import framework.CustomPageFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -25,9 +27,9 @@ public class SimpleTest {
         System.setProperty("webdriver.chrome.driver", "C://Chrome//chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
-        capability = DesiredCapabilities.Chrome();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new RemoteWebDriver(seleniumServer, capability)
+        DesiredCapabilities capability = DesiredCapabilities.chrome();
+        capability.setCapability(ChromeOptions.CAPABILITY, options);
+        driver = new ChromeDriver(capability);
         driver.get("https://www.google.com.ua");
     }
 
