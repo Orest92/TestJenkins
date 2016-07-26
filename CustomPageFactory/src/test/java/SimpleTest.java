@@ -22,7 +22,7 @@ public class SimpleTest {
 
     @BeforeMethod
     public void openPage() {
-        System.setProperty("webdriver.chrome.driver", "C:\Chrome");
+        System.setProperty("webdriver.chrome.driver", "C://Chrome");
         driver = new ChromeDriver();
         driver.get("https://www.google.com.ua");
     }
