@@ -12,7 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-import static org.testng.Assert.assertEquals;
+
+import static org.testng.Assert.*;
 
 /**
  * Created by Orest on 05.06.2016.
@@ -37,6 +38,7 @@ public class SimpleTest {
     public void Test1() {
         homePage = CustomPageFactory.initElements(driver, HomePage.class);
         testContext();
+        assertTrue(false);
     }
 
     @Test
